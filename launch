@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/google-chrome-beta newscast.html --start-fullscreen --window-position=-1920,0 --kiosk --allow-file-access-from-files
