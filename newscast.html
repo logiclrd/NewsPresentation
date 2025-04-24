@@ -1,0 +1,300 @@
+<html>
+  <head>
+    <style type="text/css">
+      @font-face
+      {
+        font-family: 'Anton';
+        src: url('Fonts/Anton-Regular.ttf');
+      }
+
+      @font-face
+      {
+        font-family: 'Helvetica Extended';
+        src: url('Fonts/HelveticaNeue53Extended.ttf');
+      }
+
+      body
+      {
+        overflow: hidden;
+      }
+
+      .Background
+      {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        object-fit: fill;
+      }
+
+      .Content
+      {
+        width: 100vw;
+        height: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .Header
+      {
+        font-family: 'Anton';
+        font-size: 72;
+        color: white;
+        transform: scale(1.5, 1);
+      }
+
+      .Emergency
+      {
+        font-family: 'Helvetica Extended';
+        text-transform: uppercase;
+        font-size: 75;
+        color: white;
+        transform: scale(1.4, 1);
+      }
+
+      @keyframes Blinker
+      {
+        0% { opacity: 1; }
+        49.9% { opacity: 1; }
+        50.1% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      .Blinking
+      {
+        animation: Blinker 0.8s linear infinite;
+      }
+
+      .Rounded
+      {
+        border-radius: 10px;
+      }
+
+      .Border
+      {
+        border: 2px solid white;
+      }
+
+      video
+      {
+        opacity: 1;
+        transition: opacity 0.6s;
+      }
+    </style>
+    <script type="text/javascript" src="pages.json"></script>
+    <script type="text/javascript">
+      var pages;
+
+      var pnlRoot;
+
+      const DefaultImageSize = { "X": 0, "Y": 0 };
+      const ImageCentrePosition = { "X": 538, "Y": 486 };
+
+      function PresentBackground(background)
+      {
+        var video = document.createElement("video");
+
+        video.className = "Background";
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+
+        var source = document.createElement("source");
+
+        source.src = background;
+        source.type = "video/mp4";
+
+        video.appendChild(source);
+
+        pnlRoot.appendChild(video);
+      }
+
+      function PresentImage(image)
+      {
+        var size;
+
+        if ("Size" in image)
+          size = image.Size;
+        else
+          size = DefaultImageSize;
+
+        var centrePosition = { "X": ImageCentrePosition.X, "Y": ImageCentrePosition.Y };
+
+        var imageClass = "";
+
+        if ("Class" in image)
+          imageClass = image.Class;
+
+        if (imageClass.split(' ').indexOf("Middle") >= 0)
+          centrePosition.Y = 540;
+
+        var position =
+          {
+            "X": centrePosition.X - size.X / 2,
+            "Y": centrePosition.Y - size.Y / 2
+          };
+
+        var img = document.createElement("img");
+
+        img.style.position = "absolute";
+        img.style.left = position.X + "px";
+        img.style.top = position.Y + "px";
+
+        if (size.X > 0)
+        {
+          img.style.width = size.X + "px";
+          img.style.height = size.Y + "px";
+        }
+
+        img.className = imageClass;
+
+        img.src = image.Source;
+
+        pnlRoot.appendChild(img);
+      }
+
+      function PresentText(text)
+      {
+        var paragraph = document.createElement("p");
+
+        paragraph.style.position = "absolute";
+        paragraph.style.left = text.Position.X + "px";
+        paragraph.style.top = text.Position.Y + "px";
+        paragraph.style.width = text.Width + "px";
+        paragraph.style.textAlign = "center";
+        paragraph.className = text.Class;
+        paragraph.innerText = text.Text;
+
+        pnlRoot.appendChild(paragraph);
+      }
+
+      function PresentVideo(videoSource)
+      {
+        var video = document.createElement("video");
+
+        video.addEventListener(
+          "ended",
+          event =>
+          {
+            video.style.opacity = 0;
+            setTimeout(
+              () =>
+              {
+                pnlRoot.removeChild(video);
+              },
+              600);
+          });
+
+        video.autoplay = true;
+        video.loop = false;
+        video.controls = false;
+        video.src = videoSource;
+
+        pnlRoot.appendChild(video);
+      }
+
+      var current_page_number;
+
+      function ShowPage(page_number)
+      {
+        current_page_number = page_number;
+
+        while (pnlRoot.firstChild != null)
+          pnlRoot.removeChild(pnlRoot.firstChild);
+
+        var page = pages[page_number];
+
+        if ("Background" in page)
+          PresentBackground(page.Background);
+
+        if ("Image" in page)
+          PresentImage(page.Image);
+
+        if ("Text" in page)
+          PresentText(page.Text);
+
+        if ("Text2" in page)
+          PresentText(page.Text2);
+
+        if ("Video" in page)
+          PresentVideo(page.Video);
+      }
+
+      const KEY_LEFT = 37;
+      const KEY_RIGHT = 39;
+
+      function AttachKeyHandlers()
+      {
+        document.addEventListener(
+          'keydown',
+          event =>
+          {
+            if (event.keyCode == KEY_LEFT)
+            {
+              let previous_page_number = current_page_number - 1;
+
+              if (previous_page_number >= 0)
+                ShowPage(previous_page_number);
+            }
+            else if (event.keyCode == KEY_RIGHT)
+            {
+              let next_page_number = current_page_number + 1;
+
+              if (next_page_number < pages.length)
+                ShowPage(next_page_number);
+            }
+          });
+      }
+
+      var preloads = [];
+
+      function PreloadImages()
+      {
+        for (let i=0; i < pages.length; i++)
+        {
+          let page = pages[i];
+
+          if ("Image" in page)
+          {
+            let image = page.Image;
+
+            var img = new Image();
+
+            img.src = image.Source;
+
+            preloads.push(img);
+          }
+        }
+      }
+
+      function Initialize()
+      {
+        pnlRoot = document.getElementById("pnlRoot");
+
+        AttachKeyHandlers();
+
+        fetch("pages.json").then(response => response.json()).then(
+          loadedPagesData =>
+          {
+            pages = loadedPagesData;
+
+            PreloadImages();
+            ShowPage(0);
+          });
+      }
+    </script>
+  </head>
+  <body onload="Initialize()">
+    <video class="Background" autoplay loop muted>
+      <source src="background.mp4" type="video/mp4" />
+    </video>
+    <div class="Content" id="pnlRoot"></div>
+  </body>
+</html>
+

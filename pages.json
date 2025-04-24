@@ -1,0 +1,176 @@
+[
+	{
+		"Image":
+		{
+			"Source": "wonderflonium.jpg",
+			"Class": "Rounded Border",
+			"Size": { "X": 595, "Y": 336 }
+		},
+		"Text":
+		{
+			"Text": "Tariffs?",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 620 },
+			"Width": 595
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "trans-manitoba.svg",
+			"Class": "Middle",
+			"Size": { "X": 400, "Y": 400 }
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "AngryGillinghamGoose.jpg",
+			"Size": { "X": 576, "Y": 432 },
+			"Class": "Rounded Border Middle"
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "audience-shot.jpg",
+			"Size": { "X": 640, "Y": 360 },
+			"Class": "Rounded Border"
+		},
+		"Text":
+		{
+			"Text": "Who's gay?",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 630 },
+			"Width": 595
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "sunnydale-goose-attack.png",
+			"Size": { "X": 500, "Y": 375 },
+			"Class": "Rounded Border Middle"
+		}
+	},
+	{
+		"Background": "background-stormy.mkv",
+		"Text":
+		{
+			"Text": "Slayer Network Weather",
+			"Class": "Header",
+			"Position": { "X": 0, "Y": 630 },
+			"Width": 1920
+		}
+	},
+	{
+		"Video": "weather-report.mp4"
+	},
+	{
+		"Image":
+		{
+			"Source": "winnipeg-turboprops.png",
+			"Size": { "X": 500, "Y": 500 }
+		},
+		"Text":
+		{
+			"Text": "Turboprops",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 645 },
+			"Width": 595
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "winnipeg-jets.png",
+			"Size": { "X": 500, "Y": 500 }
+		},
+		"Text":
+		{
+			"Text": "Jets",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 645 },
+			"Width": 595
+		}
+	},
+	{
+		"Video": "jets-attacking.mp4"
+	},
+	{
+		"Image":
+		{
+			"Source": "winnipeg-jets.png",
+			"Size": { "X": 500, "Y": 500 }
+		},
+		"Text":
+		{
+			"Text": "Jets",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 645 },
+			"Width": 595
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "winnipeg-jets.png",
+			"Size": { "X": 500, "Y": 500 }
+		},
+		"Text":
+		{
+			"Text": "Jets",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 645 },
+			"Width": 595
+		},
+		"Text2":
+		{
+			"Text": "COLD VIRUS",
+			"Class": "Emergency Blinking",
+			"Position": { "X": 0, "Y": 770 },
+			"Width": 1920
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "winnipeg-jets.png",
+			"Size": { "X": 500, "Y": 500 }
+		},
+		"Text":
+		{
+			"Text": "Jets",
+			"Class": "Header",
+			"Position": { "X": 241, "Y": 645 },
+			"Width": 595
+		},
+		"Text2":
+		{
+			"Text": "EVERYTHING IS FINE",
+			"Class": "Emergency Blinking",
+			"Position": { "X": 0, "Y": 770 },
+			"Width": 1920
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "event-poster.png",
+			"Size": { "X": 400, "Y": 509 },
+			"Class": "Middle"
+		}
+	},
+	{
+		"Image":
+		{
+			"Source": "no-singing.png",
+			"Size": { "X": 450, "Y": 450 }
+		}
+	},
+	{
+		"Video": "backstreet-boys.mp4"
+	},
+	{
+	}
+]
