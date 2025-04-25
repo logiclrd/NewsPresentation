@@ -117,20 +117,21 @@
 			"Source": "winnipeg-jets.png",
 			"Size": { "X": 500, "Y": 500 }
 		},
-		"Text":
-		{
-			"Text": "Jets",
-			"Class": "Header",
-			"Position": { "X": 241, "Y": 645 },
-			"Width": 595
-		},
-		"Text2":
-		{
-			"Text": "COLD VIRUS",
-			"Class": "Emergency Blinking",
-			"Position": { "X": 0, "Y": 770 },
-			"Width": 1920
-		}
+		"Texts":
+		[
+			{
+				"Text": "Jets",
+				"Class": "Header",
+				"Position": { "X": 241, "Y": 645 },
+				"Width": 595
+			},
+			{
+				"Text": "COLD VIRUS",
+				"Class": "Emergency Blinking",
+				"Position": { "X": 0, "Y": 770 },
+				"Width": 1920
+			}
+		]
 	},
 	{
 		"Image":
@@ -138,20 +139,21 @@
 			"Source": "winnipeg-jets.png",
 			"Size": { "X": 500, "Y": 500 }
 		},
-		"Text":
-		{
-			"Text": "Jets",
-			"Class": "Header",
-			"Position": { "X": 241, "Y": 645 },
-			"Width": 595
-		},
-		"Text2":
-		{
-			"Text": "EVERYTHING IS FINE",
-			"Class": "Emergency Blinking",
-			"Position": { "X": 0, "Y": 770 },
-			"Width": 1920
-		}
+		"Texts":
+		[
+			{
+				"Text": "Jets",
+				"Class": "Header",
+				"Position": { "X": 241, "Y": 645 },
+				"Width": 595
+			},
+			{
+				"Text": "EVERYTHING IS FINE",
+				"Class": "Emergency Blinking",
+				"Position": { "X": 0, "Y": 770 },
+				"Width": 1920
+			}
+		]
 	},
 	{
 		"Image":

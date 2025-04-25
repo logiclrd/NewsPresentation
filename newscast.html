@@ -216,11 +216,14 @@
         if ("Image" in page)
           PresentImage(page.Image);
 
+        if ("Images" in page)
+          page.Images.forEach(PresentImage);
+
         if ("Text" in page)
           PresentText(page.Text);
 
-        if ("Text2" in page)
-          PresentText(page.Text2);
+        if ("Texts" in page)
+          page.Texts.forEach(PresentText);
 
         if ("Video" in page)
           PresentVideo(page.Video);
@@ -256,20 +259,29 @@
 
       function PreloadImages()
       {
+        function PreloadImage(image)
+        {
+          let imageSource = image;
+
+          if ("Source" in imageSource)
+            imageSource = imageSource.Source;
+
+          var img = new Image();
+
+          img.src = imageSource;
+
+          preloads.push(img);
+        }
+
         for (let i=0; i < pages.length; i++)
         {
           let page = pages[i];
 
           if ("Image" in page)
-          {
-            let image = page.Image;
+            PreloadImage(page.Image);
 
-            var img = new Image();
-
-            img.src = image.Source;
-
-            preloads.push(img);
-          }
+          if ("Images" in page)
+            page.Images.forEach(PreloadImage);
         }
       }
 
