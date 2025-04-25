@@ -25,8 +25,8 @@
 	{
 		"Image":
 		{
-			"Source": "AngryGillinghamGoose.jpg",
-			"Size": { "X": 576, "Y": 432 },
+			"Source": "GillinghamGoose2.png",
+			"Size": { "X": 610, "Y": 423 },
 			"Class": "Rounded Border Middle"
 		}
 	},
@@ -48,8 +48,8 @@
 	{
 		"Image":
 		{
-			"Source": "sunnydale-goose-attack.png",
-			"Size": { "X": 500, "Y": 375 },
+			"Source": "GillinghamGoose2.png",
+			"Size": { "X": 610, "Y": 423 },
 			"Class": "Rounded Border Middle"
 		}
 	},
