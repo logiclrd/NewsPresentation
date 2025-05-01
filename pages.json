@@ -1,5 +1,7 @@
 [
 	{
+	},
+	{
 		"Image":
 		{
 			"Source": "wonderflonium.jpg",
@@ -54,6 +56,17 @@
 		}
 	},
 	{
+		"Video": "goose-report.mp4"
+	},
+	{
+		"Image":
+		{
+			"Source": "trans-manitoba.svg",
+			"Class": "Middle",
+			"Size": { "X": 400, "Y": 400 }
+		}
+	},
+	{
 		"Background": "background-stormy.mkv",
 		"Text":
 		{
@@ -65,6 +78,8 @@
 	},
 	{
 		"Video": "weather-report.mp4"
+	},
+	{
 	},
 	{
 		"Image":
@@ -95,7 +110,7 @@
 		}
 	},
 	{
-		"Video": "jets-attacking.mp4"
+		"Video": "sports-report-jets-attacking.mp4"
 	},
 	{
 		"Image":
@@ -174,5 +189,17 @@
 		"Video": "backstreet-boys.mp4"
 	},
 	{
+		"Image":
+		{
+			"Source": "event-poster.png",
+			"Size": { "X": 400, "Y": 509 },
+			"Class": "Middle"
+		}
+	},
+	{
+		"Video": "doublemeat-palace.mp4"
+	},
+	{
+		"Video": "gachnar.mp4"
 	}
 ]
