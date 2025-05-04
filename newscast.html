@@ -104,6 +104,7 @@
         video.className = "Background";
         video.autoplay = true;
         video.loop = true;
+        video.disableRemotePlayback = true;
         video.muted = true;
 
         var source = document.createElement("source");
@@ -195,6 +196,7 @@
         video.autoplay = true;
         video.loop = false;
         video.controls = false;
+        video.disableRemotePlayback = true;
         video.src = videoSource;
 
         pnlRoot.appendChild(video);
