@@ -77,7 +77,7 @@
 		}
 	},
 	{
-		"Video": "weather-report.mp4"
+		"Video": "weather-report.mkv"
 	},
 	{
 	},
@@ -110,7 +110,7 @@
 		}
 	},
 	{
-		"Video": "sports-report-jets-attacking.mp4"
+		"Video": "sports-report.mp4"
 	},
 	{
 		"Image":
@@ -195,8 +195,5 @@
 			"Size": { "X": 400, "Y": 509 },
 			"Class": "Middle"
 		}
-	},
-	{
-		"Video": "doublemeat-palace.mp4"
 	}
 ]
