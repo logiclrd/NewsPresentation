@@ -21,8 +21,8 @@
 
       .Background
       {
-        width: 100vw;
-        height: 100vh;
+        width: 1920px;
+        height: 1080px;
         position: absolute;
         margin: 0;
         padding: 0;
@@ -95,7 +95,7 @@
       var pnlRoot;
 
       const DefaultImageSize = { "X": 0, "Y": 0 };
-      const ImageCentrePosition = { "X": 538, "Y": 486 };
+      const ImageCentrePosition = { "X": 538, "Y": 386 };
 
       function PresentBackground(background)
       {
@@ -126,7 +126,10 @@
         else
           size = DefaultImageSize;
 
-        var centrePosition = { "X": ImageCentrePosition.X, "Y": ImageCentrePosition.Y };
+        var centrePosition =
+          "ImageCentrePosition" in image
+          ? image.ImageCentrePosition
+          : { "X": ImageCentrePosition.X, "Y": ImageCentrePosition.Y };
 
         var imageClass = "";
 
@@ -134,7 +137,7 @@
           imageClass = image.Class;
 
         if (imageClass.split(' ').indexOf("Middle") >= 0)
-          centrePosition.Y = 540;
+          centrePosition.Y = 440;
 
         var position =
           {
@@ -208,10 +211,31 @@
       {
         current_page_number = page_number;
 
-        while (pnlRoot.firstChild != null)
-          pnlRoot.removeChild(pnlRoot.firstChild);
+        var contentToClear = [];
+
+        var trace = pnlRoot.firstChild;
+
+        while (trace != null)
+        {
+          contentToClear.push(trace);
+          trace = trace.nextSibling;
+        }
+
+        function ClearContent()
+        {
+          contentToClear.forEach(item => pnlRoot.removeChild(item));
+        }
 
         var page = pages[page_number];
+
+        if ("Video" in page)
+        {
+          PresentVideo(page.Video);
+          setTimeout(ClearContent, 100);
+          return;
+        }
+
+        ClearContent();
 
         if ("Background" in page)
           PresentBackground(page.Background);
@@ -227,9 +251,6 @@
 
         if ("Texts" in page)
           page.Texts.forEach(PresentText);
-
-        if ("Video" in page)
-          PresentVideo(page.Video);
       }
 
       const KEY_LEFT = 37;
@@ -307,7 +328,7 @@
   </head>
   <body onload="Initialize()">
     <video class="Background" autoplay loop muted>
-      <source src="background.mp4" type="video/mp4" />
+      <source src="background-translate.mkv" type="video/mp4" />
     </video>
     <div class="Content" id="pnlRoot"></div>
   </body>

@@ -12,7 +12,7 @@
 		{
 			"Text": "Tariffs?",
 			"Class": "Header",
-			"Position": { "X": 241, "Y": 620 },
+			"Position": { "X": 241, "Y": 520 },
 			"Width": 595
 		}
 	},
@@ -43,7 +43,7 @@
 		{
 			"Text": "Who's gay?",
 			"Class": "Header",
-			"Position": { "X": 241, "Y": 630 },
+			"Position": { "X": 241, "Y": 530 },
 			"Width": 595
 		}
 	},
@@ -68,18 +68,15 @@
 	},
 	{
 		"Background": "background-stormy.mkv",
-		"Text":
+		"Image":
 		{
-			"Text": "Slayer Network Weather",
-			"Class": "Header",
-			"Position": { "X": 0, "Y": 630 },
-			"Width": 1920
+			"Source": "weather-title-overlay.png",
+			"ImageCentrePosition": { "X": 960, "Y": 280 },
+			"Size": { "X": 1236, "Y": 267 }
 		}
 	},
 	{
 		"Video": "weather-report.mkv"
-	},
-	{
 	},
 	{
 		"Image":
@@ -91,7 +88,7 @@
 		{
 			"Text": "Turboprops",
 			"Class": "Header",
-			"Position": { "X": 241, "Y": 645 },
+			"Position": { "X": 241, "Y": 545 },
 			"Width": 595
 		}
 	},
@@ -105,7 +102,7 @@
 		{
 			"Text": "Jets",
 			"Class": "Header",
-			"Position": { "X": 241, "Y": 645 },
+			"Position": { "X": 241, "Y": 545 },
 			"Width": 595
 		}
 	},
@@ -122,7 +119,7 @@
 		{
 			"Text": "Jets",
 			"Class": "Header",
-			"Position": { "X": 241, "Y": 645 },
+			"Position": { "X": 241, "Y": 545 },
 			"Width": 595
 		}
 	},
@@ -137,13 +134,13 @@
 			{
 				"Text": "Jets",
 				"Class": "Header",
-				"Position": { "X": 241, "Y": 645 },
+				"Position": { "X": 241, "Y": 545 },
 				"Width": 595
 			},
 			{
 				"Text": "COLD VIRUS",
 				"Class": "Emergency Blinking",
-				"Position": { "X": 0, "Y": 770 },
+				"Position": { "X": 0, "Y": 670 },
 				"Width": 1920
 			}
 		]
@@ -159,13 +156,13 @@
 			{
 				"Text": "Jets",
 				"Class": "Header",
-				"Position": { "X": 241, "Y": 645 },
+				"Position": { "X": 241, "Y": 545 },
 				"Width": 595
 			},
 			{
 				"Text": "EVERYTHING IS FINE",
 				"Class": "Emergency Blinking",
-				"Position": { "X": 0, "Y": 770 },
+				"Position": { "X": 0, "Y": 670 },
 				"Width": 1920
 			}
 		]
